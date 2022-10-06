@@ -1,19 +1,19 @@
 from django.shortcuts import render
 from .models import *
-# Create your views here.
+
 
 def index(request):
-    genproducts = Gen.objects.all()
-    featured_products = Featured.objects.all()
-
+    gen_products = Gen.objects.all()
+    featured_products = Product.objects.filter(featured=True)
+    
     context = {
-        'genproducts' : genproducts,
+        'gen_products' : gen_products,
         'featured_products' : featured_products,
     }
     return render(request, "index.html", context)
 
 def shop(request):
-    shop_products= Shop.objects.all()
+    shop_products= Product.objects.all()
 
     context = {
         'shop_products' : shop_products

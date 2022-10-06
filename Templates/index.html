@@ -102,10 +102,10 @@
 								</div>
 							</div>
 							<div class="col-md-6">
-								{% for genproduct in genproducts %}
-								<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url({{genproduct.image.url}});">
+								{% for gen_product in gen_products %}
+								<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url({{gen_product.image.url}});">
 									<div class="text px-3 py-1">
-										<h2 class="mb-0"><a href="#">{{genproduct.title}}</a></h2>
+										<h2 class="mb-0"><a href="#">{{gen_product.title}}</a></h2>
 									</div>	
 								</div>
 								{% endfor %}
@@ -158,7 +158,7 @@
     						<h3><a href="#">{{featured_product.title}}</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
-		    						<p class="price"><span class="mr-2 price-dc">Ksh{{featured_product.price_dc}}</span><span class="price-sale">Ksh {{featured_product.price_sale}}</span></p>
+		    						<p class="price"><span class="mr-2 price-dc">Ksh{{featured_product.price}}</span><span class="price-sale">Ksh {{featured_product.discounted_price}}</span></p>
 		    					</div>
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">
