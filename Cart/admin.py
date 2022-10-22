@@ -5,5 +5,5 @@ from .models import *
 
 admin.site.register(Customer)
 admin.site.register(Wishlist)
-# admin.site.register(Cart)
-# admin.site.register(CartItems)
+admin.site.register(Order)
+admin.site.register(OrderItem)

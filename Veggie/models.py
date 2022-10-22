@@ -1,7 +1,17 @@
 from ast import Not
 from distutils.command.upload import upload
+from random import choices
+from unicodedata import category
 from django.db import models
 from django.db.models.fields.related import OneToOneField
+
+
+CATEGORY_CHOICES = (
+    ("V", "Vegetables"),
+    ("FR", "Fruit"),
+    ("J", "Juice"),
+    ("DD", "Dried"),
+)
 
 
 class Product(models.Model):
@@ -12,6 +22,7 @@ class Product(models.Model):
     discounted_price = models.IntegerField(default=False) #selling price
     percent_discount = models.IntegerField(default=False)
     featured = models.BooleanField(default=False)
+    category = models.CharField(choices = CATEGORY_CHOICES, max_length = 2)
 
     def __str__(self):
         return self.title

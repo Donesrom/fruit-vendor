@@ -11,9 +11,6 @@ from .models import *
 
 #customer = UserProfile.objects.create(user = request.user)
 
-def login(request):
-    return render(request, "login.html")
-
 #@login_required(login_url= "login")
 def cart(request):
 
@@ -30,9 +27,9 @@ def cart(request):
 
 
 def add_to_cart(request, pk):
-    item = get_object_or_404(Product, pk)
+    product = get_object_or_404(Product, pk)
     order_item, created = OrderItem.objects.get_or_create(
-        item = item,
+        product = product,
         user = request.user,
         ordered = False
     )
