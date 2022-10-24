@@ -13,6 +13,16 @@
       </div>
     </div>
 
+	{% if messages %}
+	<ul class="messages">
+	  {% for message in messages %}
+		<p class="text-center"> 
+		  {% if message.tags %} 
+		  {% endif %} 
+			{{ message }}.</p>
+	  {% endfor %}
+	</ul>
+	{% endif %}
 {{product.get_category_display}}
 
 

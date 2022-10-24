@@ -24,8 +24,19 @@
   <form method="POST">
     {% csrf_token %}
     {{ login_form|crispy }}
+    <br>
     <button class="btn btn-primary" type="submit">Login</button>
   </form>
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <p class="text"> 
+        {% if message.tags %} 
+        {% endif %} 
+          {{ message }}.</p>
+    {% endfor %}
+  </ul>
+  {% endif %}
   <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
 </div>
 
