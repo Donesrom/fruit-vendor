@@ -47,7 +47,19 @@
 					    </div>
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
 						    <span class="text">3-5 Business days delivery &amp; Free Returns</span>
+
+
 					    </div>
+                {% if user.is_authenticated %}
+                <div class="topper text-lg-right">  
+                  <span class="text" > Hello, {{user.username}}!</span>
+                </div>
+                {% else %}
+                <div class=" topper text-lg-right">
+                  <span class="text" text-color= "white"> Hello and welcome!</span>
+                </div>
+                {% endif %}         
+
 				    </div>
 			    </div>
 		    </div>
@@ -77,11 +89,8 @@
 	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li> {% endcomment %}
 	          <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
             
-            {% if user.is_authenticated %}
-
-              <li class="nav-item"> Hello, {{user.username}}!</li>
+            {% if user.is_authenticated %}              
               <li class="nav-item"><a href="logout" class="nav-link">Logout</a></li>
-
               {% else %}
               <li class="nav-item"><a href="register" class="nav-link">Register</a></li>
               <li class="nav-item"><a href="login" class="nav-link">Login</a></li>
